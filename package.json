@@ -1,0 +1,82 @@
+{
+  "name": "dsh-kiki",
+  "version": "0.1.0",
+  "description": "Kiki for DeepSeek Harness: a Kiki tab in the sidebar that installs and shows the Kiki Mac app, reports DSH sessions to Kiki as cards, and lets the model hand tasks to Kiki's agents.",
+  "icon": "assets/icon.svg",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "kiki",
+    "agent",
+    "chief-of-staff",
+    "dashboard",
+    "mcp"
+  ],
+  "homepage": "https://github.com/lkyxuan/dsh-kiki#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkyxuan/dsh-kiki.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lkyxuan/dsh-kiki/issues"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.2-rc.1": "compatible"
+      }
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.1.0",
+    "@deepseek-ai/dsh-credentials": ">=0.2.0-rc.1",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.1",
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-credentials": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  }
+}

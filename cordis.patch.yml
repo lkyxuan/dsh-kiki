@@ -1,0 +1,5 @@
+# dsh-kiki: one plugin row. The package also declares a browser half (dsh.client),
+# which DSH serves to the web page as /plugins/dsh-kiki/client.js.
+- insert:
+    - id: dsh-kiki
+      name: dsh-kiki
